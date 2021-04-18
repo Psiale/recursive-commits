@@ -46,6 +46,5 @@
     ]
   },
   "react-dotenv": {
-    "whitelist": ["API_KEY"]
   }
 }
