@@ -11,10 +11,11 @@ const showCommits = commits => ({
 const getCommits = endpoint => async dispatch => {
     setFetching(true)
     try {
-        const res = await getRequest()
+        const result = await getRequest(endpoint)
+        dispatch(showCommits(result.data))
     } catch (error) {
-        
+        dispatch(setError(error.message))
     }
 } 
 
-export default showCommits
+export default getCommits
