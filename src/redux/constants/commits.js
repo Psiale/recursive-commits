@@ -1,1 +1,3 @@
-export const SHOW_COMMITS = 'SHOW_COMMITS';
+const SHOW_COMMITS = 'SHOW_COMMITS';
+
+export default SHOW_COMMITS
