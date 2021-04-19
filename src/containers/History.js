@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { commitsEndPoint } from '../redux/constants/index'
 import PropTypes from "prop-types";
+
+import Commit from '../components/Commit';
 import getCommits from "../redux/actions/commits"
 
 const History = ({ commits, getCommits }) => {
@@ -13,10 +15,14 @@ const History = ({ commits, getCommits }) => {
   return (
     <>
       {(commits && commits.length > 0)
-			? (commits.map((element) => {
+			? 
+			(
+				commits.map((element) => {
 				return (
 					<div key={element.commit.id} className="">
-						<p>{element.commit.message}</p>
+						<Commit
+						commit={element}
+						/>
 					</div>
 				)
 			}))
