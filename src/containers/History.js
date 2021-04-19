@@ -13,13 +13,11 @@ const History = ({ commits, getCommits }) => {
   return (
     <>
       {(commits && commits.length > 0)
-			? (commits.map((commit) => {
+			? (commits.map((element) => {
 				return (
-					<>
-					<div className="">
-						<p>{commit.message}</p>
+					<div key={element.commit.id} className="">
+						<p>{element.commit.message}</p>
 					</div>
-					</>
 				)
 			}))
 			: (<p>no commits yet</p>)}
@@ -39,7 +37,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	getCommits: () => dispatch(getCommits()),
+	getCommits: endpoint => dispatch(getCommits(endpoint)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(History);

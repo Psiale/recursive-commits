@@ -3,10 +3,10 @@ import { HashRouter, Switch, Route } from 'react-router-dom';
 import Fun from './Fun'
 import Home from './Home'
 import History from './History'
-import { setHeader } from '../api/helpers';
+// import { setHeader } from '../api/helpers';
 import axios from 'axios';
 const Routes = () => {
-    setHeader(process.env.REACT_APP_API_KEY)
+    // setHeader(process.env.REACT_APP_API_KEY)
     console.log(axios.defaults)
     return (
         <>
